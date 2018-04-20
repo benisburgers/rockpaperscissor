@@ -7,19 +7,81 @@
     <p> Playing Rock Paper Scissor </p>
     <script>
 
-    function computerPlay(){
-      let randomNumber = Math.floor(Math.random() * 3) + 1;
-      if (randomNumber == 1) {
-        return ("Rock");
+
+      function computerPlay(){
+        let randomNumber = Math.floor(Math.random() * 3) + 1;
+        if (randomNumber == 1) {
+          return ("rock");
+        }
+        else if (randomNumber == 2) {
+          return ("paper");
+        }
+        else {
+          return ("scissor");
+        }
       }
-      else if (randomNumber == 2) {
-        return ("Paper")
+
+    let computerSelection = computerPlay()
+
+    let playerSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
+
+    function convertPlayerSelection() {
+      if (playerSelection == "rock") {
+        let numericalPlayerSelection = 1;
+        console.log(numericalPlayerSelection);
+      }
+      else if (playerSelection == "paper") {
+        let numericalPlayerSelection = 2;
+        console.log(numericalPlayerSelection);
       }
       else {
-        return ("Scissor")
+        let numericalPlayerSelection = 3;
+        console.log(numericalPlayerSelection);
       }
     }
-  
+
+    function firstRound() {
+      if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor") {
+        alert ("This was not a valid entry");
+      }
+      else {
+        if (computerSelection === "rock") {
+          if (playerSelection === "paper") {
+            alert ("You win!");
+          }
+          else if (playerSelection === "scissor") {
+            alert("You lose!");
+          }
+          else {
+            alert("It's a tie");
+          }
+        }
+        if (computerSelection === "paper") {
+          if (playerSelection === "rock") {
+            alert ("You lose!");
+          }
+          else if (playerSelection === "scissor") {
+            alert("You win!");
+          }
+          else {
+            alert("It's a tie");
+          }
+        }
+        if (computerSelection === "scissor") {
+          if (playerSelection === "rock") {
+            alert ("You win!");
+          }
+          else if (playerSelection === "paper") {
+            alert("You lose!");
+          }
+          else {
+            alert("It's a tie");
+          }
+        }
+      }
+    }
+
+
     </script>
   </body>
 </html>
