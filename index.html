@@ -27,44 +27,51 @@
 
 
     function firstRound() {
+
       if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor") {
-        alert ("This was not a valid entry");
+        return ("This was not a valid entry");
       }
+
       else {
+
         if (computerSelection === "rock") {
           if (playerSelection === "paper") {
-            alert ("You win!");
+            return ("You win!");
           }
           else if (playerSelection === "scissor") {
-            alert("You lose!");
+            return ("You lose!");
           }
           else {
-            alert("It's a tie");
+            return ("It's a tie");
           }
         }
+
         if (computerSelection === "paper") {
           if (playerSelection === "rock") {
-            alert ("You lose!");
+            return ("You lose!");
           }
           else if (playerSelection === "scissor") {
-            alert("You win!");
+            return ("You win!");
           }
           else {
-            alert("It's a tie");
+            return ("It's a tie");
           }
         }
+
         if (computerSelection === "scissor") {
           if (playerSelection === "rock") {
-            alert ("You win!");
+            return ("You win!");
           }
           else if (playerSelection === "paper") {
-            alert("You lose!");
+            return ("You lose!");
           }
           else {
-            alert("It's a tie");
+            return ("It's a tie");
           }
         }
       }
+      console.log("Computer Selection = " + computerSelection);
+      console.log("Player Selection = " + playerSelection);
     }
 
     </script>
