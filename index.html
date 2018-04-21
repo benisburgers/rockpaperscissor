@@ -21,58 +21,57 @@
         }
       }
 
-    let computerSelection = computerPlay()
-
-    let playerSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
-
-
     function firstRound() {
 
+      let computerSelection = computerPlay()
+      let playerSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
+
+      console.log("Computer Selection = " + computerSelection);
+      console.log("Player Selection = " + playerSelection);
+
       if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor") {
-        return ("This was not a valid entry");
+        return ("invalidEntry");
       }
 
       else {
-
         if (computerSelection === "rock") {
           if (playerSelection === "paper") {
-            return ("You win!");
+            return ("playerWins");
           }
           else if (playerSelection === "scissor") {
-            return ("You lose!");
+            return ("playerLoses");
           }
           else {
-            return ("It's a tie");
+            return ("tie");
           }
         }
 
         if (computerSelection === "paper") {
           if (playerSelection === "rock") {
-            return ("You lose!");
+            return ("playerLoses");
           }
           else if (playerSelection === "scissor") {
-            return ("You win!");
+            return ("playerWins");
           }
           else {
-            return ("It's a tie");
+            return ("tie");
           }
         }
 
         if (computerSelection === "scissor") {
           if (playerSelection === "rock") {
-            return ("You win!");
+            return ("playerWins");
           }
           else if (playerSelection === "paper") {
-            return ("You lose!");
+            return ("playerLoses");
           }
           else {
-            return ("It's a tie");
+            return ("tie");
           }
         }
       }
-      console.log("Computer Selection = " + computerSelection);
-      console.log("Player Selection = " + playerSelection);
     }
+
 
     </script>
   </body>
