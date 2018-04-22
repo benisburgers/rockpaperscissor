@@ -24,21 +24,21 @@
     function firstRound() {
 
       let computerSelection = computerPlay()
-      let playerSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
+      let humanSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
 
+      console.log("Human Selection = " + humanSelection);
       console.log("Computer Selection = " + computerSelection);
-      console.log("Player Selection = " + playerSelection);
 
-      if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor") {
+      if (humanSelection !== "rock" && humanSelection !== "paper" && humanSelection !== "scissor") {
         return ("invalidEntry");
       }
 
       else {
         if (computerSelection === "rock") {
-          if (playerSelection === "paper") {
+          if (humanSelection === "paper") {
             return ("playerWins");
           }
-          else if (playerSelection === "scissor") {
+          else if (humanSelection === "scissor") {
             return ("computerWins");
           }
           else {
@@ -47,10 +47,10 @@
         }
 
         if (computerSelection === "paper") {
-          if (playerSelection === "rock") {
+          if (humanSelection === "rock") {
             return ("computerWins");
           }
-          else if (playerSelection === "scissor") {
+          else if (humanSelection === "scissor") {
             return ("playerWins");
           }
           else {
@@ -59,10 +59,10 @@
         }
 
         if (computerSelection === "scissor") {
-          if (playerSelection === "rock") {
+          if (humanSelection === "rock") {
             return ("playerWins");
           }
-          else if (playerSelection === "paper") {
+          else if (humanSelection === "paper") {
             return ("computerWins");
           }
           else {
@@ -77,15 +77,15 @@
       let computerScore = 0;
       let i;
       for (i = 1; i < 6; i++) {
-        console.log("Round Nr. " + i);
+        console.log("\n Round Nr. " + i);
         let result = firstRound();
         if (result == "playerWins") {
            humanScore = humanScore + 1;
-           console.log("Human wins round Nr. " + i);
+           console.log("Human beats computer");
          }
         else if (result == "computerWins") {
           computerScore = computerScore + 1;
-          console.log("Computer wins round Nr. " + i);
+          console.log("Computer beats human" + i);
         }
         else {
           console.log("It's a tie");
@@ -94,13 +94,13 @@
          console.log("Computer Score: " + computerScore);
        }
       if (humanScore > computerScore) {
-        console.log("Human won game");
+        console.log("Human wins");
       }
       else if (humanScore < computerScore) {
-        console.log("Computer won game");
+        console.log("Computer wins");
       }
       else {
-        console.log("Nobody won");
+        console.log("Nobody wins");
       }
      }
 
