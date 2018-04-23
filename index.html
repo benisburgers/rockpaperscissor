@@ -5,7 +5,9 @@
     <title>Rock Paper Scissor</title>
   </head>
   <body>
-    <p> Playing Rock Paper Scissor </p>
+    <p> Wanna play? </p>
+    <input id="clickMe" type="button" value="yes" onclick="game();" />
+    
     <script>
 
     function computerPlay() {
@@ -21,7 +23,7 @@
       }
     }
 
-    function firstRound() {
+    function Round() {
 
       let computerSelection = computerPlay()
       let humanSelection = prompt("What do you choose?", "Rock, paper, or scissor").toLowerCase()
@@ -78,14 +80,14 @@
       let i;
       for (i = 1; i < 6; i++) {
         console.log("\n Round Nr. " + i);
-        let result = firstRound();
+        let result = Round();
         if (result == "playerWins") {
            humanScore = humanScore + 1;
            console.log("Human beats computer");
          }
         else if (result == "computerWins") {
           computerScore = computerScore + 1;
-          console.log("Computer beats human" + i);
+          console.log("Computer beats human");
         }
         else {
           console.log("It's a tie");
